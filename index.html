@@ -29,12 +29,68 @@
         <h3>
 <a name="welcome-to-aospa-pico" class="anchor" href="#welcome-to-aospa-pico"><span class="octicon octicon-link"></span></a>Welcome to aospa-pico</h3>
 
-<p>here yuo find code for building aospa for pico.</p>
+<p>here you will find code and a few patches necessary for building aospa for pico.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p>updated on: 10 September 2014</p>
+
+<pre><code>$ echo "get your hands dirty!"
 </code></pre>
+
+<p>Code Base: <a href="https://github.com/AOSPA-legacy">https://github.com/AOSPA-legacy</a></p>
+
+<p>List of repositories to patch:</p>
+
+<ol>
+<li>android_build</li>
+<li>android_frameworks_av</li>
+<li>android_frameworks_base</li>
+<li>android_vendor_pa</li>
+</ol><h4>
+<a name="android_build" class="anchor" href="#android_build"><span class="octicon octicon-link"></span></a>android_build</h4>
+
+<ul>
+<li>removing auditd from compilation</li>
+<li>removing webviewchromium from bootclasspath</li>
+<li>revert adding prebuilt chromium support scripts</li>
+</ul><h4>
+<a name="android_frameworks_av" class="anchor" href="#android_frameworks_av"><span class="octicon octicon-link"></span></a>android_frameworks_av</h4>
+
+<ul>
+<li>Camera: QCOM legacy definitions,HTC cam switch,NO_UPDATE_PREVIEW</li>
+<li>Added support legacy Qualcomm OpenMAX IL libs for MSM7x27</li>
+<li>libstagefright: Enable meta mode for 7x27a video encoder </li>
+<li>legacy OMX: handle QCOM colorformat</li>
+<li>use hw_get_module_by_class</li>
+<li>Remove CAMERA_CMD_METADATA &amp;&amp; LONGSHOT calls</li>
+</ul><h4>
+<a name="android_frameworks_base" class="anchor" href="#android_frameworks_base"><span class="octicon octicon-link"></span></a>android_frameworks_base</h4>
+
+<ul>
+<li>add resized missing drawables to drawable-mdpi </li>
+<li>fix for metadata, longshot</li>
+</ul><h4>
+<a name="android_vendor_pa" class="anchor" href="#android_vendor_pa"><span class="octicon octicon-link"></span></a>android_vendor_pa</h4>
+
+<ul>
+<li>products/: add pico defines </li>
+</ul><p>List of repositories to sync:</p>
+
+<ol>
+<li>android_device_htc_pico (android-4.4_aospa-legacy)</li>
+<li>android_kernel_htc_pico (android-4.4)</li>
+<li>proprietary_vendor_htc_pico (android-4.4)</li>
+<li>android_external_webkit (cm-11.0) (external repo <a href="https://github.com/androidarmv6/android_external_webkit/">HERE</a>)</li>
+</ol><h3>
+<a name="current-status" class="anchor" href="#current-status"><span class="octicon octicon-link"></span></a>Current Status</h3>
+
+<h4>
+<a name="not-working" class="anchor" href="#not-working"><span class="octicon octicon-link"></span></a>not working:</h4>
+
+<ul>
+<li>Video Recording</li>
+<li>feel report an issue <a href="https://github.com/aospa-pico/aospa-pico.github.io/issues/new">here</a>
+</li>
+</ul><p>That's about it, for building aospa-legacy for pico. Please do send in pull requests, if you can fix some of the errors, or building new features, etc.</p>
       </section>
     </div>
 
